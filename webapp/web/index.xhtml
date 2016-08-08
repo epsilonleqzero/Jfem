@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <title>Ted Kwan</title>
+            </f:facet>
+            <style>
+                @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+            </style>
+            <!--<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>-->
+            <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <!--            <h:outputScript library="js" name="skel.min.js"/>
+                        <h:outputScript library="js" name="skel-panels.min.js"/>
+                        <h:outputScript library="js" name="init.js"/>-->
+            <h:outputStylesheet library="css" name="skel-noscript.css" />
+            <h:outputStylesheet library="css" name="style.css" />
+            <h:outputStylesheet library="css" name="style-desktop.css" />
+            <!--<link type="text/css" rel="stylesheet" href="#{request.contextPath}/themes/cupertino/skin.css"/>-->
+        </h:head>
+        <h:body>
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+
+                    <!-- Logo -->
+                    <div id="logo">
+                        <h1><a href="#">Welcome friend</a></h1>
+                    </div>
+
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li><h:outputLink value="/JavaFEM/faces/web/index.xhtml">Home</h:outputLink></li>
+                            <li><h:outputLink value="/JavaFEM/faces/web/picture-gallery.xhtml">Picture Gallery</h:outputLink></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+            <!-- Header -->
+
+            <!-- Banner -->
+            <div id="banner">
+                <div class="container">
+                </div>
+            </div>
+            <!-- /Banner -->
+
+            <!-- Main -->
+            <div id="page">
+
+                <!-- Main -->
+                <div id="main" class="container">
+                    <div class="row">
+
+                        <div class="3u">
+                            <section class="sidebar">
+                                <header>
+                                    <h2>Features</h2>
+                                </header>
+                                <ul class="style1">
+                                    <li><a href="#">Finite Element Script</a></li>
+                                    <li><a href="#">Link 2</a></li>
+                                    <li><a href="#">Link 3</a></li>
+                                    <li><a href="#">Link 4</a></li>
+                                </ul>
+                            </section>
+                            <section class="sidebar">
+                                <header>
+                                    <h2>External Links</h2>
+                                </header>
+                                <ul class="style1">
+                                    <li><a href="https://github.com/tmkwan/">Github</a></li>
+                                    <li><a href="http://www.linkedin.com/in/theodore-kwan-3a0b93122">LinkedIn</a></li>
+                                    <li><a href="https://arxiv.org/list/math.NA/new">Numerical Analysis arXiv</a></li>
+                                    <li><a href="http://www.math.uci.edu/">UCI</a></li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div class="9u skel-cell-important">
+                            <section>
+                                <header>
+                                    <h2>Description and Features</h2>
+                                    <span class="byline">Written and developed by Ted Kwan</span>
+                                </header>
+                                <p>Welcome to my website! It is operational, but new features are being added all of the time. This website serves as a sandbox for programming in Ubuntu and Java EE. I hope you enjoy your stay, and will try out the features at the bottom.</p>
+                                <p>There are currently two working features (a third is being worked on). These are the utility to solve the Poisson equation on a square, then plot the result. The other feature creates a phase-plane plot for the Lorenz attractor. All of the numerical calculations are done when the feature is clicked, and no graphics have been pre-saved on them. This allows for testing of the subroutines and will soon allow for modification of the parameters.</p>
+                                <p>This website was built using Java EE 7 and JSF 2.2. The features at the bottom of the page are examples of numerical programming in Java and C++ (using JNI to link between them). The numerical calculations are mostly done in C++, and the linear algebra is all done with the Armadillo library which is a wrapper for BLAS and LAPACK. This was done to ensure speed up the processing time, since Java is not known for computational mathematics and speed. Many of the subroutines were translated from MATLAB, and some were written originally for this website. The github repository linked on the left contains the code for this site, and contains many other code samples.</p>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Main -->
+
+            </div>
+            <!-- /Main -->
+
+            <!-- Featured -->
+            <div id="featured">
+                <div class="container">
+                    <div class="row">
+                        <section class="4u">
+                            <div class="box">
+                                <!--<a href="#" class="image left"><img src="images/pics04.jpg" alt=""></a>-->
+                                <h3>Generate a plot.</h3>
+                                <p>Run the Finite Element Method by clicking below. The method is run on the equation:</p>
+                                <p><m:math>
+                                    <mtable class="m-equation-square" displaystyle="true" style="display: block; margin-top: 1.0em; margin-bottom: 2.0em">
+                                        <mtr>
+                                            <mtd>
+                                                <mspace width="6.0em" />
+                                            </mtd>
+                                            <mtd columnalign="left">
+                                                <mi>&#x003A9;</mi>
+                                                <mo>=</mo>
+                                                <mrow>
+                                                    <mo form="prefix">[</mo>
+                                                    <mn>0,1</mn>
+                                                    <mo form="postfix">]</mo>
+                                                </mrow>
+                                                <mo>&#x000D7;</mo>
+                                                <mrow>
+                                                    <mo form="prefix">[</mo>
+                                                    <mn>0,1</mn>
+                                                    <mo form="postfix">]</mo>
+                                                </mrow>
+                                            </mtd>
+                                        </mtr>
+                                    </mtable>
+                                </m:math>
+                                <m:math>
+                                    <mtable class="m-equation-square" displaystyle="true" style="display: block; margin-top: 1.0em; margin-bottom: 2.0em">
+                                        <mtr>
+                                            <mtd>
+                                                <mspace width="6.0em" />
+                                            </mtd>
+                                            <mtd columnalign="left">
+                                                <mi>&#x00394;</mi>
+                                                <mi>u</mi>
+                                                <mo>=</mo>
+                                                <mo>-</mo>
+                                                <mn>8</mn>
+                                                <msup>
+                                                    <mi>&#x003C0;</mi>
+                                                    <mn>2</mn>
+                                                </msup>
+                                                <mi>sin</mi>
+                                                <mrow>
+                                                    <mo form="prefix">(</mo>
+                                                    <mn>2</mn>
+                                                    <mi>&#x003C0;</mi>
+                                                    <mi>x</mi>
+                                                    <mo form="postfix">)</mo>
+                                                </mrow>
+                                                <mi>cos</mi>
+                                                <mrow>
+                                                    <mo form="prefix">(</mo>
+                                                    <mn>2</mn>
+                                                    <mi>&#x003C0;</mi>
+                                                    <mi>y</mi>
+                                                    <mo form="postfix">)</mo>
+                                                </mrow>
+                                                <mo>,</mo>
+                                                <mspace width="1.00em" />
+                                                <mrow>
+                                                    <mo form="prefix">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo>,</mo>
+                                                    <mi>y</mi>
+                                                    <mo form="postfix">)</mo>
+                                                </mrow>
+                                                <mo>&#x02208;</mo>
+                                                <mi>&#x003A9;</mi>
+                                            </mtd>
+                                        </mtr>
+                                    </mtable>
+                                </m:math>
+                                <m:math>
+                                    <mtable class="m-equation-square" displaystyle="true" style="display: block; margin-top: 1.0em; margin-bottom: 2.0em">
+                                        <mtr>
+                                            <mtd>
+                                                <mspace width="6.0em" />
+                                            </mtd>
+                                            <mtd columnalign="left">
+                                                <mi>u</mi>
+                                                <mrow>
+                                                    <mo form="prefix">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo>,</mo>
+                                                    <mi>y</mi>
+                                                    <mo form="postfix">)</mo>
+                                                </mrow>
+                                                <mo>=</mo>
+                                                <mn>0</mn>
+                                                <mo>,</mo>
+                                                <mspace width="1.00em" />
+                                                <mrow>
+                                                    <mo form="prefix">(</mo>
+                                                    <mi>x</mi>
+                                                    <mo>,</mo>
+                                                    <mi>y</mi>
+                                                    <mo form="postfix">)</mo>
+                                                </mrow>
+                                                <mo>&#x02208;</mo>
+                                                <mo>&#x02202;</mo>
+                                                <mi>&#x003A9;</mi>
+                                            </mtd>
+                                        </mtr>
+                                    </mtable>
+                                </m:math>
+                                </p>
+                                <p:ajaxStatus>
+                                    <h:form>
+                                        <p:commandButton value="Show Plot" icon="ui-icon-extlink" actionListener="#{femSessionBean.showPlot()}">
+                                        </p:commandButton>
+                                    </h:form>
+                                </p:ajaxStatus>
+                            </div>
+                        </section>
+                        <section class="4u">
+                            <div class="box">
+                                <!--<a href="#" class="image left"><img src="images/pics05.jpg" alt=""></a>-->
+                                <h3>Plot a strange attractor</h3>
+                                <p>Click below to numerically solve the Lorenz equations.</p>
+                                <a href="#" class="button">More</a>
+                            </div>
+                        </section>
+                        <section class="4u">
+                            <div class="box">
+                                <!--<a href="#" class="image left"><img src="images/pics06.jpg" alt=""></a>-->
+                                <h3>Another fun tool!</h3>
+                                <p>Tool description</p>
+                                <a href="#" class="button">More</a>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <!-- /Featured -->
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="3u">
+                            <section>
+                                <h2>Inspirational Quote</h2>
+                                <div class="balloon">
+                                    <blockquote>&ldquo;&nbsp;&nbsp;If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.&nbsp;&nbsp;&rdquo;
+                                        <strong>&ndash;&nbsp;&nbsp;John von Neumann</strong></blockquote>
+                                </div>
+                                <div class="ballon-bgbtm">&nbsp;</div>
+                            </section>
+                        </div>
+                        <div class="3u">
+                            <section>
+                                <h2>3 pages of links</h2>
+                                <ul class="default">
+                                    <li>
+                                        <h3>First link title</h3>
+                                        <p><a href="#">Description.</a></p>
+                                    </li>
+                                    <li>
+                                        <h3>Second link title</h3>
+                                        <p><a href="#">Description.</a></p>
+                                    </li>
+                                    <li>
+                                        <h3>Third link title</h3>
+                                        <p><a href="#">Description.</a></p>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div class="3u">
+                            <section>
+                                <h2>Pictue Gallery</h2>
+                                <p>Here are some pictures of my graduation.</p>
+                                <ul class="style5">
+                                    <!--                                    <li><p:graphicImage library="images" name="Ted_Grad_Pose.jpg" /></li>-->
+                                    <!--                                    <li><a href="#"><img src="images/pics07.jpg" alt=""></a></li>
+                                                                        <li><a href="#"><img src="images/pics08.jpg" alt=""></a></li>
+                                                                        <li><a href="#"><img src="images/pics09.jpg" alt=""></a></li>
+                                                                        <li><a href="#"><img src="images/pics10.jpg" alt=""></a></li>
+                                                                        <li><a href="#"><img src="images/pics11.jpg" alt=""></a></li>
+                                                                        <li><a href="#"><img src="images/pics12.jpg" alt=""></a></li>-->
+                                </ul>
+                                <a href="#" class="button">More Collections</a>
+                            </section>
+                        </div>
+                        <div class="3u">
+                            <section>
+                                <h2>A poem</h2>
+                                <p><strong>The Title.</strong></p>
+                                <p>First Paragraph.</p>
+                                <p>Second Paragraph.</p>
+                                <a href="#" class="button">More Collections</a>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Footer -->
+
+            <!-- Copyright -->
+            <div id="copyright" class="container">
+                Written by Ted Kwan
+            </div>
+            <!--                        <div id="tester" style="width:90%;height:250px;">
+                        </div>
+                        <h:outputScript library="js" name="plottest.js" />-->
+        </h:body>
+
+    </f:view>
+</html>

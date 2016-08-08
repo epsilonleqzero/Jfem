@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+            <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <link type="text/css" rel="stylesheet" href="sales.css" />
+            <link type="text/css" rel="stylesheet" href="salesback.css" />
+            <style type="text/css">
+                .ui-layout-north {
+                    z-index:20 !important;
+                    overflow:visible !important;;
+                }
+
+                .ui-layout-north .ui-layout-unit-content {
+                    overflow:visible !important;
+                }
+            </style>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">
+                <p:layoutUnit position="north" header="TOP" resizable="true" closable="true" collapsible="true" size="100">
+<!--                    <div id="tester" style="width:90%;height:250px;">
+                        
+                    </div>
+                    <h:outputScript library="js" name="plottest.js"/>-->
+<!--                    <p:outputLabel for="basic" value="Basic:" /> 
+                    <p:themeSwitcher id="basic" style="width:165px">
+                        <f:selectItem itemLabel="Choose Theme" itemValue="" />
+                        <f:selectItems value="[afterdark, afternoon, afterwork, aristo, black-tie, blitzer, bluesky, bootstrap, casablanca, cupertino, cruze, dark-hive, delta, dot-luv, eggplant, excite-bike, flick, glass-x, home, hot-sneaks, humanity, le-frog, midnight, mint-choc, omega, overcast, pepper-grinder, redmond, rocket, sam, smoothness, south-street, start, sunny, swanky-purse, trontastic, ui-darkness, ui-lightness, vader]" var="theme" itemLabel="" itemValue=""/>
+                    </p:themeSwitcher>
+                    <p:column>
+                        <h:outputText styleClass="ui-theme ui-theme-" style="display-block" />
+                    </p:column>-->
+                </p:layoutUnit>
+                <p:layoutUnit position="south" header="BOTTOM" resizable="true" closable="true" collapsible="true" size="100">
+                    <h:outputText value="Bottom content." />
+                </p:layoutUnit>
+                <p:layoutUnit position="west" header="LEFT" resizable="true" closable="true" collapsible="true" size="350">
+                    <p:accordionPanel activeIndex="0" >
+                        <p:tab title="Menu 1">
+                            <br />
+                            <p:calendar mode="inline" navigator="none" />
+                            <br />
+                        </p:tab>
+
+                        <p:tab title="Menu 2">
+                            <h:outputText value="Menu 2 Content" />
+                        </p:tab>
+
+                        <p:tab title="Menu 3">
+                            <h:outputText value="Menu 3 Content" />
+                        </p:tab>
+                    </p:accordionPanel>
+                </p:layoutUnit>
+                <p:layoutUnit position="east" header="RIGHT" resizable="true" closable="true" collapsible="true" size="200">
+<!--                    <div id="tester" style="width:90%;height:250px;">
+                        
+                    </div>
+                    <ui:define name="jstesting">
+                        <script>
+                        TESTER = document.getElementById('tester');
+
+                        Plotly.plot( TESTER, [{
+                        x: [1, 2, 3, 4, 5],
+                        y: [1, 2, 4, 8, 16] }], { 
+                        margin: { t: 0 } } );
+
+                        /* Current Plotly.js version */
+                        console.log( Plotly.BUILD );
+                        </script>
+                    </ui:define>-->
+
+                </p:layoutUnit>
+                <p:layoutUnit position="center" header="CENTER" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="Center Content" />
+                    <f:view>
+                        <h:form id="form">
+                            <h:panelGrid id="grid" cellpadding="5" columns="2" style="margin-bottom:10px">
+                                <f:facet name="header">
+                                    <p:messages id="msgs" />
+                                </f:facet> 
+                                <p:outputLabel for="x1" value="Lower x bound:" />
+                                <p:inputText id="x1" value="#{femSessionBean.x1}" required="true" requiredMessage="Lower x bound is required." />
+                                <p:outputLabel for="x2" value="Upper x bound:" />
+                                <p:inputText id="x2" value="#{femSessionBean.x2}" required="true" requiredMessage="Upper x bound required." />
+                                <p:outputLabel for="y1" value="Lower y bound:" />
+                                <p:inputText id="y1" value="#{femSessionBean.y1}" required="true" requiredMessage="Lower y bound required." />
+                                <p:outputLabel for="y2" value="Upper y bound:" />
+                                <p:inputText id="y2" value="#{femSessionBean.y2}" required="true" requiredMessage="Upper y bound required." />
+                                <p:outputLabel for="h" value="h:" />
+                                <p:inputText id="h" value="#{femSessionBean.h}" required="true" requiredMessage="Step size required." />
+                                <p:commandButton value="Submit" id="btnSubmit" update="grid" actionListener="#{femSessionBean.calculateFEM()}" />
+                            </h:panelGrid>
+                        </h:form>
+                    </f:view>
+                </p:layoutUnit>
+            </p:layout>
+
+            <p:dialog header="Basic Dialog" widgetVar="dlg1" modal="true">
+                <h:outputText value="Resistance to PrimeFaces is futile!" />
+            </p:dialog>
+
+        </h:body>
+
+    </f:view>
+</html>

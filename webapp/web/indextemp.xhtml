@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition template="/WEB-INF/templates/masterTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:m="http://www.w3.org/1998/Math/MathML">
+    
+    <ui:define name="title">Ted Kwan</ui:define>
+
+    <ui:define name="content">
+        <header>
+            <h2>Description and Features</h2>
+            <span class="byline">Written and developed by Ted Kwan</span>
+        </header>
+        <p>Welcome to my website! It is operational, but new features are being added all of the time. This website serves as a sandbox for programming in Ubuntu and Java EE. I hope you enjoy your stay, and will try out the features at the bottom.</p>
+        <p>There are currently two working features (a third is being worked on). These are the utility to solve the Poisson equation on a square, then plot the result. The other feature creates a phase-plane plot for the Lorenz attractor. All of the numerical calculations are done when the feature is clicked, and no graphics have been pre-saved on them. This allows for testing of the subroutines and will soon allow for modification of the parameters.</p>
+        <p>This website was built using Java EE 7 and JSF 2.2. The features at the bottom of the page are examples of numerical programming in Java and C++ (using JNI to link between them). The numerical calculations are mostly done in C++, and the linear algebra is all done with the Armadillo library which is a wrapper for BLAS and LAPACK. This was done to ensure speed up the processing time, since Java is not known for computational mathematics and speed. Many of the subroutines were translated from MATLAB, and some were written originally for this website. The github repository linked on the left contains the code for this site, and contains many other code samples.</p>
+    </ui:define>
+
+</ui:composition>

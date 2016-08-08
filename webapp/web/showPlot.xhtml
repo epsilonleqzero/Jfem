@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <title>Test Plot</title>
+            </f:facet>
+            <style type="text/css">
+                .ui-widget {
+                    font-size: 90%;
+                }
+            </style>
+            <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        </h:head>
+        <h:body>
+            <!--<i id="customheader" class="fa fa-fw fa-car" style="display:none"></i>-->
+            <!--        <h:form>
+                     
+                     <h:outputText value="b0b!"/>
+                    </h:form>-->
+            <!--<h:outputScript library="js" name="common.js"/>-->
+            <div id="myDiv" style="width:100%;height:400px;"></div>
+            <script language="JavaScript" type="text/javascript">
+                TESTER = document.getElementById('myDiv');
+                        var a = <h:outputText value="#{femSessionBean.xar}"/>
+                        var b = <h:outputText value="#{femSessionBean.yar}"/>
+                        var c = <h:outputText value="#{femSessionBean.uar}"/>
+                        var data = [
+                            {
+                                opacity: 0.9,
+                                intensity: c,
+                                colorscale: [
+                                    [0, 'rgb(255, 0, 255)'],
+                                    [0.5, 'rgb(0, 255, 0)'],
+                                    [1, 'rgb(0, 0, 255)']
+                                ],
+                                type: 'mesh3d',
+                                x: a,
+                                y: b,
+                                z: c
+                            }
+                        ];
+                var layout = {
+                    autosize: false,
+                    width: 600,
+                    height: 500,
+                    margin: {
+                        l: 50,
+                        r: 50,
+                        b: 100,
+                        t: 100,
+                        pad: 4
+                    }
+                };
+                Plotly.newPlot('myDiv', data, layout);
+            </script>
+        </h:body>
+    </f:view>
+</html>
+

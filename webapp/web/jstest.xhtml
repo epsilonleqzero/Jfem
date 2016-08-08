@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <title>Testing JS</title>
+            </f:facet>
+            <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!--            <link type="text/css" rel="stylesheet" href="sales.css" />
+            <link type="text/css" rel="stylesheet" href="salesback.css" />-->
+<!--            <style type="text/css">
+                .ui-layout-north {
+                    z-index:20 !important;
+                    overflow:visible !important;;
+                }
+
+                .ui-layout-north .ui-layout-unit-content {
+                    overflow:visible !important;
+                }
+            </style>-->
+        </h:head>
+        <h:body>
+            <h:form>
+                <p:commandButton value="Show Plot" icon="ui-icon-extlink" actionListener="#{femSessionBean.showPlot()}">
+                </p:commandButton>
+            </h:form>
+
+            <!--<h:outputScript library="js" name="common.js" target="body" />-->
+<!--            <div id="tester" style="width:90%;height:250px;">
+            </div>
+            <h:outputScript library="js" name="plottest.js" target="body" />-->
+            <!--            <ui:define name="jstesting">
+                            <script>
+                                TESTER = document.getElementById('tester');
+            
+                                Plotly.plot(TESTER, [{
+                                        x: [1, 2, 3, 4, 5],
+                                        y: [1, 2, 4, 8, 16]}], {
+                                    margin: {t: 0}});
+            
+                                /* Current Plotly.js version */
+                                console.log(Plotly.BUILD);
+                            </script>
+                        </ui:define>-->
+        </h:body>
+
+    </f:view>
+</html>
